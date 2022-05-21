@@ -14,7 +14,7 @@ PROJECT=liberica-openjdk-with-javafx-${FLAVOR}
 # download original Dockerfile and enable back javafx
 rm -fr Dockerfile* &> /dev/null
 echo "Downloading original Dockerfile from ${URL}${FLAVOR}/${JDK_VERSION}/Dockerfile"
-curl ${URL}${FLAVOR}/${JDK_VERSION}/Dockerfile | grep -v javafx > Dockerfile
+curl -s ${URL}${FLAVOR}/${JDK_VERSION}/Dockerfile | grep -v javafx > Dockerfile
 
 # enable back javafx
 rm Dockerfile-original
